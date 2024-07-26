@@ -31,7 +31,7 @@ This script will build the Docker images, start the containers, and apply the ne
 
 Once the containers are running, you can access the following URLs in your browser:
 
-Django Backend: http://localhost:8000
+Django Backend: http://localhost:8000 <br>
 React Frontend: http://localhost:3000
 
 
