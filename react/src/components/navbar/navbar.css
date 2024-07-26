@@ -1,0 +1,145 @@
+.sidebar {
+  width: 50px; 
+  height: 100vh;
+
+  background-color: #333; 
+  color: white;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+  transition: width 0.3s;
+}
+
+.sidebar.expanded {
+  width: 250px;
+  transition: width 0.3s;
+}
+
+
+.hamburger-container {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+
+.hamburger {
+  box-sizing: border-box;
+
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+
+  position: absolute;
+  top: 5px;
+  left: 7.5px;
+}
+
+
+.item-container {
+  width: 100%;
+  margin-top: 3em;
+
+  transition: visibility 0s, opacity 0.5s linear;
+
+}
+
+.sidebar .long-sidebar-item {
+  visibility: hidden;  
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.5s linear 0.3s; 
+}
+
+.sidebar.expanded .long-sidebar-item {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear; 
+}
+
+.sidebar.expanded .short-sidebar-item {
+  display: none;
+}
+
+.sidebar.expanded .long-sidebar-item {
+  display: inline-block;
+  width: 100%;
+  height: 5vh;
+  
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+}
+
+.short-sidebar-item {
+  margin-bottom: 10px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  .topbar {
+    height: 50px;
+    background-color: #f8f8f8; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    width: calc(100vw - 50px); 
+    left: 50px; 
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+  }
+  
+  .topbar .search-container {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .topbar input[type="search"] {
+    padding: 8px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+  }
+  
+  .user-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-container span {
+    margin-right: 10px; 
+  }
+  

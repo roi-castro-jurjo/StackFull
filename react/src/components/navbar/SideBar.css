@@ -1,0 +1,61 @@
+.sidebar {
+    width: 50px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .sidebar.expanded {
+    width: 250px;
+  }
+  
+  .hamburger-container {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 200;
+  }
+  
+  .hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .item-container {
+    width: 100%;
+    overflow: hidden; 
+
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar-item {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: opacity 0.3s ease; 
+  }
+  
+  .long-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .short-item {
+    display: flex;
+    justify-content: center;
+  }
+  
