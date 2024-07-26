@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  db:
+    build: ./postgres
+    networks:
+      - docker_net
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: database
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    ports:
+      - "5432:5432"
+    command: ["postgres", "-c", "log_statement=all"]
+
+  python:
+    build: ./django
+    networks:
+      - docker_net
+    volumes:
+      - ./django:/code
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  react:
+    build: ./react
+    networks:
+      - docker_net
+    volumes:
+      - ./react:/code
+    ports:
+      - "3000:3000"
+    depends_on:
+      - python
+    command: ["npm", "start"]
+
+volumes:
+  postgres_data:
+
+networks:
+  docker_net: {}
